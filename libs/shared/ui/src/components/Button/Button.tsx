@@ -1,13 +1,23 @@
-import styles from './Button.module.scss';
+import { HTMLAttributes, ReactNode } from 'react';
 
-/* eslint-disable-next-line */
-export interface ButtonProps {}
+type ButtonVariant = 'primary' | 'secondary';
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  variant?: ButtonVariant;
+  children?: ReactNode;
+}
+
+const variantClassName = {
+  primary: 'bg-red-300',
+  secondary: 'bg-blue-300',
+} satisfies Record<ButtonVariant, string>;
 
 export function Button(props: ButtonProps) {
+  const { variant = 'primary', children, ...restProps } = props;
+
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to Button!</h1>
-    </div>
+    <button className={variantClassName[variant]} {...restProps}>
+      {children}
+    </button>
   );
 }
 
