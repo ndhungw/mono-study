@@ -1,5 +1,5 @@
 module.exports = {
-    plugins: [require('prettier-plugin-tailwindcss')],
-    tailwindConfig: './tailwind.config.js',
-  };
-  
+  ...require("./../../../.prettierrc.js"),
+  plugins: [require("prettier-plugin-tailwindcss")],
+  tailwindConfig: "./tailwind.config.js",
+};
