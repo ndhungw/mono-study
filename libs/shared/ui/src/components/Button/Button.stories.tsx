@@ -1,12 +1,12 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Button } from './Button';
+import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Button } from "./Button";
 
 const Story: ComponentMeta<typeof Button> = {
   component: Button,
-  title: 'Button',
+  title: "Button",
   argTypes: {
     onClick: {
-      action: 'onClick executed!',
+      action: "onClick executed!",
     },
   },
 };
@@ -18,6 +18,6 @@ const Template: ComponentStory<typeof Button> = (args) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  variant: 'primary',
-  children: 'hello',
+  variant: "primary",
+  children: "hello",
 };
